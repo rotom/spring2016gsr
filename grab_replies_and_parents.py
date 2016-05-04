@@ -37,10 +37,10 @@ if __name__ == '__main__':
 
         # initiate TwitterSearch with appropriate tokens
         ts = TwitterSearch(
-            consumer_key = "rifiWQ3JJjo3nrVuA6iM7meX7",
-            consumer_secret = "0wjfcoglnnqkV0tJYSLTSvWn7RZpr1HEzmgmwFFjFCDWZBMxee",
-            access_token = "24338827-IDwBZtWIlCrhqOyhy9016wbEKdLkxoFuhJI6USPya",
-            access_token_secret = "ADkraKk76XI9ESTtyQ2jcTvPrJparDzItJcyO0LHOiQ0D"
+            consumer_key = "",
+            consumer_secret = "",
+            access_token = "",
+            access_token_secret = ""
          )
 
         #seed replies
