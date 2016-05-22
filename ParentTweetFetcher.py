@@ -40,8 +40,6 @@ class ParentTweetFetcher():
                 tweet = eval_dict['text'].replace('\n', '\\n').encode('utf-8')
                 self.tweetdict[parent_id] = [tweet_id, tweet]
 
-        print str(len(self.tweetdict)) + ' done'
-
     def chunk_ids(self):
         
         """
@@ -59,7 +57,6 @@ class ParentTweetFetcher():
             if (i+1)%100 == 0 or i == len(self.parents) - 1:
                 self.chunks.append(chunk)
                 chunk = []
-        print str(len(self.chunks)) , 'chunked'
 
     def write_output(self):
 
@@ -88,19 +85,14 @@ class ParentTweetFetcher():
                     
                     if str(tweet['id']) in self.tweetdict:
                         
-                        #print 'yay'
+                        
                         this_id = str(tweet['id'])
                         this_text = tweet['text'].replace('\n', '\\n').encode('utf-8')
-                        print this_text
+                        
                         self.tweetdict[this_id].append(this_text)
                         line = this_id +'\t'+this_text+'\t'+self.tweetdict[this_id][0]+'\t'+ self.tweetdict[this_id][1]
                         f.write(line+'\n')
-                        del self.tweetdict[this_id]
-                        
-                    else:
-                        
-                        print 'repeat'
-            
+                        del self.tweetdict[this_id]         
 
     def get_tweets_and_parents(self):
 
